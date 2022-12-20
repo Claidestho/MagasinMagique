@@ -9,9 +9,8 @@ class Magasin {
 
     public void updateQuality() {
 
-        for (int i = 0; i < items.length; i++) {
+        for (Item item : items) {
 
-            Item item = items[i];
             item.sellIn = item.sellIn - 1;
 
             if (item.name.equals("Comte")) {
@@ -30,25 +29,24 @@ class Magasin {
                 if (item.sellIn <= 0) {
                     item.quality = 0;
                 }
-        }
-            else if (item.name.equals("Kryptonite")) {
-            item.sellIn = 0;
-            item.quality = 80;
-        } else if (item.name.equals("Pouvoirs Magiques")) {
-            item.quality = item.quality - 2;
-        } else {
-            if (item.quality > 50) {
-                item.quality = 50;
-            }
-            if (item.sellIn >= 0) {
-                item.quality = item.quality - 1;
-            } else {
+            } else if (item.name.equals("Kryptonite")) {
+                item.sellIn = 0;
+                item.quality = 80;
+            } else if (item.name.equals("Pouvoirs Magiques")) {
                 item.quality = item.quality - 2;
-            }
-            if (item.quality < 0) {
-                item.quality = 0;
+            } else {
+                if (item.quality > 50) {
+                    item.quality = 50;
+                }
+                if (item.sellIn >= 0) {
+                    item.quality = item.quality - 1;
+                } else {
+                    item.quality = item.quality - 2;
+                }
+                if (item.quality < 0) {
+                    item.quality = 0;
+                }
             }
         }
-    }
 }
 }
