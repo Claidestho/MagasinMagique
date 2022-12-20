@@ -1,0 +1,7 @@
+- name: Draw Yu-Gi-Oh! Card
+  # You may pin to the exact commit or the version.
+  # uses: Doarakko/draw-action@7bb4df558139ca61c895b250433fe76c6c954491
+  uses: Doarakko/draw-action@v1.2
+  with:
+    # The GitHub token used to create an authenticated client
+    github-token: # default is ${{ github.token }}
